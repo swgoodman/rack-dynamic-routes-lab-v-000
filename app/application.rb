@@ -7,7 +7,8 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      if @@items.include?(req.path[7..-1])
+      selected_item = @@items.find {|i| i.name == req.path[7..-1]}
+      if @@items.include?(selected_item)
         resp.write "This is working"
       else
         resp.write "Item not found"
