@@ -9,7 +9,7 @@ class Application
     if req.path.match(/items/)
       selected_item = @@items.find {|i| i.name == req.path[7..-1]}
       if @@items.include?(selected_item)
-        resp.write "This is working"
+        resp.write selected_item.price
       else
         resp.write "Item not found"
         resp.status = 400
