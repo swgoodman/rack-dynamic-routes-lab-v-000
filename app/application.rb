@@ -1,3 +1,5 @@
+require 'pry'
+
 class Application
 
   def call(env)
@@ -5,7 +7,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path =="/items"
-      if @@item.contain?("hello")
+      if @@item.contain?(rep.path)
       else
         resp.write "Item not found"
         resp.status = 400
