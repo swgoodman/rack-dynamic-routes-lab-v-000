@@ -8,6 +8,7 @@ class Application
       if @@item.contain?("hello")
       else
         resp.write "Item not found"
+        resp.status = 404
       end
     else
       resp.write "Route not found"
