@@ -8,7 +8,7 @@ class Application
 
     if req.path.match(/items/)
       if @@items.include?(req.path[7..-1])
-        resp.write "This is working"
+        resp.write "req.path[7..-1].price"
       else
         resp.write "Item not found"
         resp.status = 400
