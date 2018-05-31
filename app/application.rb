@@ -6,7 +6,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path =="/items/"
+    if req.path.match(/items/)
       if @@item.contain?(req.path[7..-1])
         resp.write "This is working"
       else
